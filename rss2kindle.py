@@ -185,14 +185,6 @@ article_navpoint_tpl = """
         </navPoint>
 """
 
-
-#Some feeds are just pointerssto other pages and we have to get
-#those page in order to render the news itself. We try to detect only the article
-#content, since many of them are created using joola, wordpress, etc
-#If we cannot detect the article we save the entire html.
-content_tags = ["article_content", "content"]
-
-
 def inc(counter, amount=1):
   return counter + amount
 
