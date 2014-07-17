@@ -5,6 +5,7 @@
   </feed>
   <feed>
     <name>nome do feed</name>
+    <url>url do feed</url>
   </feed>
   <feed>
     <name>feed 1</name>
