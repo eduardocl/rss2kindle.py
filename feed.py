@@ -11,4 +11,6 @@ feeds = [
         ("The Daily WTF",       "http://syndication.thedailywtf.com/TheDailyWtf"),
 		("rfi",					"http://www.rfi.fr/radiofr/podcast/rss_apprendre_francais.xml"),
         ("Daily Galaxy",        "http://www.dailygalaxy.com/my_weblog/rss.xml"),
-        ("Zero Hora",           "http://zerohora.clicrbs.com.br/rs/rss/")]
+        ("Zero Hora",           "http://zerohora.clicrbs.com.br/rs/rss/"),
+        ("Ordem Livre",         "http://ordemlivre.org/feed"),
+		("Akita on Rails",      "http://feeds.feedburner.com/AkitaOnRails")]
