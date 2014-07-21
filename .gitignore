@@ -2,4 +2,5 @@
 *.pyo
 *.mobi
 *.epub
+feed.py
 testes/*
