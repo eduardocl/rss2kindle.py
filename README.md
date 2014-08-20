@@ -6,7 +6,7 @@ The feeds are downloaded and parsed using the greate library feedparser (https:/
 
 
 Before using:
-  Download kindlegen from http://www.amazon.com/gp/feature.html?docId=1000765211
+  download kindlegen from http://www.amazon.com/gp/feature.html?docId=1000765211
   and copy the executables for linux and mac to directory "amazon". Rename the
   kindlegen for mac to kindlegenmac.
 
