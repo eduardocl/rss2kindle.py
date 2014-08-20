@@ -1,6 +1,9 @@
 ### rss2kindle.py
 
-rss2kindle.py is a periodical generator from rss or atom feeds for kindle. 
+rss2kindle.py is a kindle periodical format generator from rss or atom feeds.
+
+The feeds are downloaded and parsed using the greate library feedparser (https://pythonhosted.org/feedparser/) and for html manipulation, the Beautiful Soap library (http://www.crummy.com/software/BeautifulSoup/bs4/doc/). These two libs save me a huge amount of time.   
+
 
 Before using:
   Download kindlegen from http://www.amazon.com/gp/feature.html?docId=1000765211
@@ -12,4 +15,4 @@ In order to run type:
 
 python rss2kindle.py
 
-To add a new feed edit the file feed.py adding the name and the feed link.
+If you want to add a new feed edit the file feed.py adding the name and the feed link.
