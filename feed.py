@@ -9,7 +9,6 @@ import xml.etree.ElementTree as ET
 
 feeds = [
         ("Weekend Nerd",        "http://weekendnerd.wordpress.com/feed/"),
-        ('Code Geeks',          'http://feeds.feedburner.com/JavaCodeGeeks'),
         ("Le Gorafi",           "http://www.legorafi.fr/feed"),
         ("Reinaldo Azevedo",    "http://veja.abril.com.br/blog/reinaldo/feed/"),
         ("Notalatina",          "http://notalatina.blogspot.com/feeds/posts/default"),
