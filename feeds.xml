@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<feeds>
+ <feed>
+   <name>Code Geeks</name>
+   <url>http://feeds.feedburner.com/JavaCodeGeeks</url>
+ </feed>
+ <feed>
+   <name>Weekend Nerd</name>
+   <url>http://weekendnerd.wordpress.com/feed/</url>
+ </feed>
+</feeds>

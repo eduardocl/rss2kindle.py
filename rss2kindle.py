@@ -36,6 +36,7 @@ coverpage_tpl=""" <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
             @page {padding: 0pt; margin:0pt}
             body { text-align: center; padding:0pt; margin: 0pt; }
         </style>
+         <link rel="stylesheet" type="text/css" href="./styles.css">
     </head>
     <body>
 
@@ -76,7 +77,8 @@ content_opf = """<?xml version='1.0' encoding='utf-8'?>
 
   </metadata>
     <item href="cover.jpg" id="cover" media-type="image/jpeg"/>
-
+    <item id="epub.embedded.font" href="Tciaar.ttf" media-type="application/x-font-ttf"/>
+    
      <manifest>
 
        <item href="coverpage.xhtml" id="coverpage" media-type="application/xhtml+xml"/>
@@ -111,8 +113,9 @@ spine_item_tpl = """<itemref idref="id%(id)s"/>
 article_content_tpl = """<html>
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
-<body>
+<body class="tciaar">
   <h1>%(title)s</h1><br/>
   <p style="font-size:8pt"> %(author)s </p><br/>
   <p style="font-size:8pt"> %(published)s </p><br/>
@@ -128,8 +131,9 @@ contents_html_tpl = """<html>
   <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
     <title>Table of Contents</title>
+    <link rel="stylesheet" href="./styles.css">
   </head>
-  <body>
+  <body class="tciaar">
     <h1>rss2kindle.py</h1>
 
     %(articles_links)s
@@ -215,6 +219,7 @@ class Entry:
 class Feed:
 	def __init__(self, name, url):
 		self.name = name
+		self.url = url
 		self.entries = []
 
 	def add_entry(self, entry):
@@ -249,8 +254,9 @@ class Epub:
         print "Downloading images for article:{0} [{1}]".format(entry.title, feed.name)
         html = BeautifulSoup(entry.content)
         images = html.find_all("img")
-        tokens = url.split("/")
-        feeder = "/".join(tokens[0:len(tokens)-1])
+        #print "url", url
+        #tokens = url.split("/")
+        #feeder = "/".join(tokens[0:len(tokens)-1])
 
         for image in images:
             img_url = image['src']
@@ -289,6 +295,8 @@ class Epub:
     epubfile.writestr("content.opf", contentopf)
     epubfile.writestr("contents.html", contentshmtl)
     epubfile.writestr("toc.ncx", tocncx)    
+    epubfile.write("testes/styles.css", "styles.css")
+    epubfile.write("testes/Tciaar.ttf", "Tciaar.ttf")
     os.system("rm -rf temp")    
 
   def __create_contents(self):
@@ -374,7 +382,7 @@ if __name__ == "__main__":
   today = datetime.date.today()
   epubfile = "rss2kindle_{0}.epub".format(str(today.year)+str(today.month)+ str(today.day))
 
-  for feed in feeds:
+  for feed in feeds[0:2]:
     feedname = feed[0]
     url = feed[1]
     f = feedparser.parse(url)
