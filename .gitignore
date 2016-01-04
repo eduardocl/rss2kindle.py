@@ -2,3 +2,4 @@
 *.pyo
 feed.py
 testes/*
+amazon/*
