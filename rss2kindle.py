@@ -295,8 +295,6 @@ class Epub:
     epubfile.writestr("content.opf", contentopf)
     epubfile.writestr("contents.html", contentshmtl)
     epubfile.writestr("toc.ncx", tocncx)    
-    epubfile.write("testes/styles.css", "styles.css")
-    epubfile.write("testes/Tciaar.ttf", "Tciaar.ttf")
     os.system("rm -rf temp")    
 
   def __create_contents(self):
